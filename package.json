@@ -6,7 +6,11 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf build && cd C:/Users/paavo/Documents/GitHub/fullstackopen2021/osa2/puhelinluettelo && npm run build --prod && cp -r build C:/Users/paavo/Documents/GitHub/backend2021",
+    "deploy": "git push heroku main",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",    
+    "logs:prod": "heroku logs --tail"
   },
   "author": "paavokal",
   "license": "ISC",
